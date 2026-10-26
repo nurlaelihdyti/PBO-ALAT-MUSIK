@@ -35,8 +35,8 @@
 
 | No | Nama | NIM |
 |:--:|------|-----|
-| 1 | [Nurlaeli Hidayati] | [F1D02510129] |
-| 2 | [Qolbina Aprianti] | [F1D02510132] |
+| 1 | Nurlaeli Hidayati | F1D02510129 |
+| 2 | Qolbina Aprianti | F1D02510132 |
 
 📚 **Mata Kuliah** : Pemrograman Berorientasi Objek (PBO)
 🏫 **Kelas** : 3D
@@ -111,15 +111,6 @@ classDiagram
 | `+` | Method/atribut `public` |
 | Panah segitiga kosong `<\|--` | Inheritance (`extends`) |
 | Panah putus-putus `..>` | Ketergantungan (class memakai class lain) |
-
-<details>
-<summary>🖼️ Lihat versi gambar (PNG)</summary>
-
-<br>
-
-![Class Diagram](class-diagram.png)
-
-</details>
 
 ---
 
