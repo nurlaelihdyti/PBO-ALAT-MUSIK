@@ -226,10 +226,10 @@ pbo-alat-musik/
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/USERNAME/pbo-alat-musik.git
+git clone https://github.com/USERNAME/PBO-ALAT-MUSIK.git
 
 # 2. Masuk ke folder src
-cd pbo-alat-musik/src
+cd PBO-ALAT-MUSIK/src
 
 # 3. Compile semua file
 javac *.java
