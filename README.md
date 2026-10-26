@@ -31,11 +31,11 @@
 
 ## 📖 Deskripsi Program
 
-Program ini memperkenalkan dan memainkan empat alat musik: **Gitar, Piano, Drum, dan Suling**.
+Program ini memperkenalkan dan memainkan empat alat musik yaitu: **Gitar, Piano, Drum, dan Suling**.
 
 Semua alat musik punya kesamaan: punya **nama**, punya **asal**, dan bisa **dibunyikan**. Namun **cara bunyi** dan **cara memainkannya berbeda-beda**.
 
-Karena itu `AlatMusik` dibuat sebagai **abstract class**. Class ini menyimpan hal yang sama, sedangkan hal yang berbeda diserahkan ke masing-masing subclass.
+Oleh Karena itu `AlatMusik` dibuat sebagai **abstract class**. Class ini menyimpan hal yang sama, sedangkan hal yang berbeda diserahkan ke masing-masing subclass.
 
 > 💡 **Mengapa abstract class?**
 > "Alat musik" adalah konsep umum. Tidak ada alat musik yang bunyinya hanya "bunyi alat musik". Bunyinya baru jelas ketika sudah menjadi gitar, piano, drum, atau suling.
@@ -45,7 +45,7 @@ Karena itu `AlatMusik` dibuat sebagai **abstract class**. Class ini menyimpan ha
 ## 🗺️ Class Diagram
 
 <p align="center"> 
-<img width="2400" height="1400" alt="Class Diagram Sistem Alat Musik" src="https://github.com/user-attachments/assets/79a64629-e789-405d-ab9b-737eb23295bc" />
+<img width="2400" height="1400" alt="Class Diagram Sistem Alat Musik" src="https://github.com/user-attachments/assets/fcbab1b9-7c78-4d4f-8624-37bbeb1a9241" />
 </p>
 
 ```mermaid
