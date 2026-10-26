@@ -1,3 +1,4 @@
+// INHERITANCE: Piano mewarisi AlatMusik
 public class Piano extends AlatMusik {
     private int jumlahTuts;
 
