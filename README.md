@@ -88,6 +88,9 @@ classDiagram
     AlatMusik <|-- Suling
     Main ..> AlatMusik : menggunakan
 ```
+<p align="center">
+  <img src="class-diagram.png" alt="Class Diagram Sistem Alat Musik" width="100%">
+</p>
 
 **Cara membaca diagram:**
 
