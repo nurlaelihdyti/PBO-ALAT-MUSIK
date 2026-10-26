@@ -44,6 +44,10 @@ Karena itu `AlatMusik` dibuat sebagai **abstract class**. Class ini menyimpan ha
 
 ## 🗺️ Class Diagram
 
+<p align="center"> 
+<img width="2400" height="1400" alt="Class Diagram Sistem Alat Musik" src="https://github.com/user-attachments/assets/79a64629-e789-405d-ab9b-737eb23295bc" />
+</p>
+
 ```mermaid
 classDiagram
     class AlatMusik {
@@ -88,9 +92,6 @@ classDiagram
     AlatMusik <|-- Suling
     Main ..> AlatMusik : menggunakan
 ```
-<p align="center">
-  <img src="class-diagram.png" alt="Class Diagram Sistem Alat Musik" width="100%">
-</p>
 
 **Cara membaca diagram:**
 
