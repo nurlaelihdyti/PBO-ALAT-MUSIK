@@ -23,8 +23,8 @@
 | 1 | Nurlaeli Hidayati | F1D02510129 |
 | 2 | Qolbina Aprianti | F1D02510132 |
 
-📚 **Mata Kuliah** : Pemrograman Berorientasi Objek (PBO)
-🏫 **Kelas** : 3D
+📚 **Mata Kuliah** : Pemrograman Berorientasi Objek (PBO)<br>
+🏫 **Kelas** : 3D<br>
 📅 **Tahun** : 2026
 
 ---
@@ -35,7 +35,7 @@ Program ini memperkenalkan dan memainkan empat alat musik yaitu: **Gitar, Piano,
 
 Semua alat musik punya kesamaan: punya **nama**, punya **asal**, dan bisa **dibunyikan**. Namun **cara bunyi** dan **cara memainkannya berbeda-beda**.
 
-Oleh Karena itu `AlatMusik` dibuat sebagai **abstract class**. Class ini menyimpan hal yang sama, sedangkan hal yang berbeda diserahkan ke masing-masing subclass.
+Oleh karena itu `AlatMusik` dibuat sebagai **abstract class**. Class ini menyimpan hal yang sama, sedangkan hal yang berbeda diserahkan ke masing-masing subclass.
 
 > 💡 **Mengapa abstract class?**
 > "Alat musik" adalah konsep umum. Tidak ada alat musik yang bunyinya hanya "bunyi alat musik". Bunyinya baru jelas ketika sudah menjadi gitar, piano, drum, atau suling.
@@ -206,6 +206,7 @@ flowchart TD
 ```
 PBO-ALAT-MUSIK/
 ├── README.md
+├── CLASS-DIAGRAM.png
 ├── AlatMusik.java    ← abstract class
 ├── Gitar.java
 ├── Piano.java
@@ -239,10 +240,10 @@ java Main
 ## 🖥️ Contoh Output
 
 ```
-==== PERKENALAN ALAT MUSIK ===
+=== PERKENALAN ALAT MUSIK ===
 Nama      : Gitar
 Asal      : Spanyol
-Cara main : Senar dipetik atau dipetik dengan pick
+Cara main : Senar dipetik dengan jari atau pick
 Bunyi     : Jreng... jreng... (6 senar)
 -------------------------------
 Nama      : Piano
