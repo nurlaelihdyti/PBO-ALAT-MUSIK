@@ -1,3 +1,4 @@
+// INHERITANCE: Drum mewarisi AlatMusik
 public class Drum extends AlatMusik {
     public Drum() {
         super("Drum", "Amerika Serikat");
