@@ -14,6 +14,6 @@ public class Gitar extends AlatMusik {
 
     @Override
     public String getCaraMain() {
-        return "Senar dipetik atau dipetik dengan pick";
+        return "Senar dipetik dengan jari atau pick";
     }
 }

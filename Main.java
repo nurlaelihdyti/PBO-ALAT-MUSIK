@@ -16,7 +16,7 @@ public class Main {
         daftar.add(new Drum());
         daftar.add(new Suling());
 
-        System.out.println("==== PERKENALAN ALAT MUSIK ===");
+        System.out.println("=== PERKENALAN ALAT MUSIK ===");
         for (AlatMusik a : daftar) {
             a.perkenalan(); // satu perintah, hasil beda tiap objek
         }
