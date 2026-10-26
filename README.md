@@ -4,7 +4,7 @@
 
 ### Studi Kasus PBO: Abstract Class, Inheritance & Polymorphism
 
-![Java](https://img.shields.io/badge/Java-17+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Java](https://img.shields.io/badge/Java-8+-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![OOP](https://img.shields.io/badge/Paradigma-OOP-6C63FF?style=for-the-badge)
 ![Konsep](https://img.shields.io/badge/Konsep-Abstract_Class-e91e63?style=for-the-badge)
 ![Kelas](https://img.shields.io/badge/Kelas-3D-0d6efd?style=for-the-badge)
@@ -13,21 +13,6 @@
 *Satu perintah, banyak suara.* 🎸 🎹 🥁 🪈
 
 </div>
-
----
-
-## 📑 Daftar Isi
-
-1. [Anggota Kelompok](#-anggota-kelompok)
-2. [Deskripsi Program](#-deskripsi-program)
-3. [Class Diagram](#️-class-diagram)
-4. [Penjelasan Konsep](#-penjelasan-konsep)
-5. [Penjelasan Tiap Class](#-penjelasan-tiap-class)
-6. [Alur Program](#-alur-program)
-7. [Struktur Proyek](#-struktur-proyek)
-8. [Cara Menjalankan](#️-cara-menjalankan)
-9. [Contoh Output](#️-contoh-output)
-10. [Kesimpulan](#-kesimpulan)
 
 ---
 
@@ -72,25 +57,29 @@ classDiagram
     }
     class Gitar {
         -int jumlahSenar
+        +Gitar(int)
         +bunyikan() void
         +getCaraMain() String
     }
     class Piano {
         -int jumlahTuts
+        +Piano(int)
         +bunyikan() void
         +getCaraMain() String
     }
     class Drum {
+        +Drum()
         +bunyikan() void
         +getCaraMain() String
     }
     class Suling {
+        +Suling()
         +bunyikan() void
         +getCaraMain() String
     }
     class Main {
-        +mainkan(AlatMusik) void
-        +main(String[]) void
+        +mainkan(AlatMusik)$ void
+        +main(String[])$ void
     }
 
     AlatMusik <|-- Gitar
@@ -106,11 +95,12 @@ classDiagram
 |:--:|------|
 | `<<abstract>>` | Class abstract, tidak bisa dibuat objeknya |
 | `*` setelah nama method | Method abstract (tanpa isi) |
+| `$` setelah nama method | Method `static` |
 | `#` | Atribut `protected` (bisa diakses subclass) |
 | `-` | Atribut `private` |
 | `+` | Method/atribut `public` |
-| Panah segitiga kosong `<\|--` | Inheritance (`extends`) |
-| Panah putus-putus `..>` | Ketergantungan (class memakai class lain) |
+| Panah segitiga kosong | Inheritance (`extends`) |
+| Panah putus-putus | Ketergantungan (class memakai class lain) |
 
 ---
 
@@ -149,6 +139,8 @@ public abstract class AlatMusik {
 
 ```java
 public class Gitar extends AlatMusik {
+    private int jumlahSenar;
+
     public Gitar(int jumlahSenar) {
         super("Gitar", "Spanyol");   // memanggil konstruktor induk
         this.jumlahSenar = jumlahSenar;
@@ -158,15 +150,17 @@ public class Gitar extends AlatMusik {
 
 ### 3️⃣ Polymorphism → satu perintah, banyak perilaku
 
-Semua objek disimpan dalam `ArrayList<AlatMusik>`. Saat `bunyikan()` dipanggil, Java menjalankan versi milik **objek aslinya** (*dynamic binding*).
+Semua objek disimpan dalam `ArrayList<AlatMusik>`. Saat `perkenalan()` memanggil `bunyikan()`, Java menjalankan versi milik **objek aslinya** (*dynamic binding*).
 
 ```java
 ArrayList<AlatMusik> daftar = new ArrayList<>();
 daftar.add(new Gitar(6));
 daftar.add(new Piano(88));
+daftar.add(new Drum());
+daftar.add(new Suling());
 
 for (AlatMusik a : daftar) {
-    a.bunyikan();   // hasil berbeda tiap objek
+    a.perkenalan();   // hasil berbeda tiap objek
 }
 ```
 
@@ -174,16 +168,16 @@ Polymorphism juga terlihat pada method `mainkan(AlatMusik alat)`. Satu method bi
 
 ---
 
-## 🔍 Penjelasan Tiap Class
+## 🔍 Penjelasan Tiap File
 
 | File | Jenis | Peran |
 |------|-------|-------|
 | `AlatMusik.java` | 🔒 Abstract class | Induk. Menyimpan `nama`, `asal`, dan kerangka perilaku |
 | `Gitar.java` | 🎸 Subclass | Bunyi "Jreng", punya atribut `jumlahSenar` |
-| `Piano.java` | 🎹 Subclass | Bunyi "Ting tung", punya atribut `jumlahTuts` |
+| `Piano.java` | 🎹 Subclass | Bunyi "Tit tut", punya atribut `jumlahTuts` |
 | `Drum.java` | 🥁 Subclass | Bunyi "Dum tak", dimainkan dengan stik |
 | `Suling.java` | 🪈 Subclass | Bunyi "Fuuu fiuu", dimainkan dengan ditiup |
-| `Main.java` | ▶️ Program utama | Membuat objek, menampilkan polymorphism |
+| `Main.java` | ▶️ Program utama | Membuat objek dan menampilkan polymorphism |
 
 ---
 
@@ -193,9 +187,9 @@ Polymorphism juga terlihat pada method `mainkan(AlatMusik alat)`. Satu method bi
 flowchart TD
     A([Mulai]) --> B[Buat ArrayList bertipe AlatMusik]
     B --> C[Tambah objek Gitar, Piano, Drum, Suling]
-    C --> D{Masih ada alat\ndi daftar?}
+    C --> D{Masih ada alat<br/>di daftar?}
     D -- Ya --> E[Panggil perkenalan]
-    E --> F[Java menjalankan bunyikan\nsesuai jenis objek]
+    E --> F[Java menjalankan bunyikan<br/>sesuai jenis objek]
     F --> D
     D -- Tidak --> G[Panggil mainkan untuk tiap alat]
     G --> H([Selesai])
@@ -206,30 +200,28 @@ flowchart TD
 ## 📂 Struktur Proyek
 
 ```
-pbo-alat-musik/
-├── 📄 README.md
-├── 🖼️ class-diagram.png
-└── 📁 src/
-    ├── AlatMusik.java    ← abstract class
-    ├── Gitar.java
-    ├── Piano.java
-    ├── Drum.java
-    ├── Suling.java
-    └── Main.java         ← program utama
+PBO-ALAT-MUSIK/
+├── README.md
+├── AlatMusik.java    ← abstract class
+├── Gitar.java
+├── Piano.java
+├── Drum.java
+├── Suling.java
+└── Main.java         ← program utama
 ```
 
 ---
 
 ## ▶️ Cara Menjalankan
 
-**Syarat:** sudah terpasang **JDK 17** atau lebih baru. Cek dengan `java -version`.
+**Syarat:** sudah terpasang **JDK**. Cek dengan `java -version`.
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/USERNAME/PBO-ALAT-MUSIK.git
+git clone https://github.com/nurlaelihdyti/PBO-ALAT-MUSIK.git
 
-# 2. Masuk ke folder src
-cd PBO-ALAT-MUSIK/src
+# 2. Masuk ke folder proyek
+cd PBO-ALAT-MUSIK
 
 # 3. Compile semua file
 javac *.java
@@ -243,7 +235,7 @@ java Main
 ## 🖥️ Contoh Output
 
 ```
-==== PERKENALAN ALAT MUSIK ====
+==== PERKENALAN ALAT MUSIK ===
 Nama      : Gitar
 Asal      : Spanyol
 Cara main : Senar dipetik atau dipetik dengan pick
@@ -264,7 +256,7 @@ Asal      : Indonesia
 Cara main : Ditiup sambil menutup lubang dengan jari
 Bunyi     : Fuuu... fiuu... fuuu...
 -------------------------------
-==== KONSER MINI ====
+===== KONSER MINI =====
 >> Gitar dimainkan: Jreng... jreng... (6 senar)
 >> Piano dimainkan: Tit... tut... (88 tuts)
 >> Drum dimainkan: Dum... tak... dum... tak...
@@ -278,7 +270,7 @@ Bunyi     : Fuuu... fiuu... fuuu...
 | Poin | Status | Letak dalam kode |
 |------|:--:|------------------|
 | Abstract Class | ✅ | `AlatMusik.java` |
-| Abstract Method | ✅ | `bunyikan()`, `getCaraMain()` |
+| Abstract Method | ✅ | `bunyikan()` dan `getCaraMain()` |
 | Inheritance | ✅ | `Gitar`, `Piano`, `Drum`, `Suling` memakai `extends` |
 | Polymorphism | ✅ | `ArrayList<AlatMusik>` dan `mainkan(AlatMusik)` di `Main.java` |
 | Penjelasan kode | ✅ | Komentar di kode dan README ini |
@@ -295,7 +287,7 @@ Bunyi     : Fuuu... fiuu... fuuu...
 
 <div align="center">
 
-Dibuat dengan ☕ dan 💻 oleh **[Nurlaeli Hidayati]** & **[Qolbina Aprianti]**
+Dibuat dengan ☕ dan 💻 oleh **Nurlaeli Hidayati** & **Qolbina Aprianti**
 
 ⭐ Universitas Mataram, 2026 ⭐
 
