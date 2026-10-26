@@ -1,3 +1,4 @@
+// INHERITANCE: Suling mewarisi AlatMusik
 public class Suling extends AlatMusik {
     public Suling() {
         super("Suling", "Indonesia");
